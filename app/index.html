@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leonida Ledger: GTA VI Trophy Guide and Tracker</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: cited guides, a roadmap to the platinum, missable flags, and saved progress.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="masthead">
+  <div>
+    <p class="eyebrow">Grand Theft Auto VI / PlayStation 5 / 55 trophies</p>
+    <h1>Leonida Ledger</h1>
+    <p class="lede">Every trophy, its official name and grade, a guide in our own words with its sources named, and a checklist that saves your progress on your own machine.</p>
+  </div>
+  <div class="progress" id="progressBox" aria-live="polite">
+    <p class="progressCount"><span id="earnedCount">0</span> <span class="muted">of 55 earned</span></p>
+    <div class="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
+    <p class="progressGrades" id="gradeCounts"></p>
+  </div>
+</header>
+
+<section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
+  <h2>Roadmap to the platinum</h2>
+  <p class="roadmapIntro">PowerPyx rates the set 4 out of 10 and about 200 hours. One playthrough is enough: there is no mission replay, no New Game Plus, and free roam stays open after the story. Cheats disable trophies and saving, so keep them off for a trophy run.</p>
+  <ol class="steps">
+    <li>
+      <h3>Step 1: Play the story <span class="stepTime">60 to 80 hours</span></h3>
+      <p>Finish the 5 chapters and take optional missions as they appear. Scan vehicles and study animals on the way: the 100 percent checklist counts progress made during the story. Do the Chapter 1 meditation at Jason’s house when Lucia offers it (see Positive Mental Attitude).</p>
+    </li>
+    <li>
+      <h3>Step 2: The 100 percent checklist <span class="stepTime">about 100 hours</span></h3>
+      <p>After the story, the checklist opens under Progress, Stats, 100% Completion. It is lenient, closer to 60 percent true completion: 200 of 277 vehicles, 100 of 255 animals, 50 of 66 weapons, and any 70 of 80 challenges. Nothing on it is missable.</p>
+    </li>
+    <li>
+      <h3>Step 3: Strangers and cleanup <span class="stepTime">about 10 hours</span></h3>
+      <p>Finish the 8 Strangers and Freaks strands that count, the character questlines for Andy, Kenton, Billy, Randy, Tyrone and Bret, then sweep up whatever is left. Most trophies pop on the way through Steps 1 and 2.</p>
+    </li>
+  </ol>
+  <ul class="facts">
+    <li><strong>1</strong> trophy possibly missable</li>
+    <li><strong>0</strong> online trophies</li>
+    <li><strong>28</strong> hidden until earned</li>
+    <li><strong>1</strong> playthrough</li>
+    <li><strong>200</strong> hours, about</li>
+  </ul>
+  <p class="missableNote" id="missableNote"><strong>Watch one trophy:</strong> Positive Mental Attitude is the only one PowerPyx and GTABase flag as possibly missable. Every other trophy stays earnable in free roam after the story.</p>
+</section>
+
+<section class="toolbar" aria-label="Find and filter trophies">
+  <div class="searchRow">
+    <label class="searchLabel">Search <input id="search" type="search" placeholder="Trophy name, mission, or keyword" autocomplete="off"></label>
+    <label class="spoilerLabel"><input id="spoiler" type="checkbox" checked> Hide story spoilers</label>
+  </div>
+  <div class="chipRow" id="kindChips" role="group" aria-label="Filter by kind">
+    <button type="button" class="chip active" data-kind="all">All 55</button>
+    <button type="button" class="chip" data-kind="story">Story</button>
+    <button type="button" class="chip" data-kind="missable">Missable</button>
+    <button type="button" class="chip" data-kind="collectible">Collectibles</button>
+    <button type="button" class="chip" data-kind="activity">Activities</button>
+    <button type="button" class="chip" data-kind="crime">Crime</button>
+    <button type="button" class="chip" data-kind="stranger">Strangers</button>
+    <button type="button" class="chip" data-kind="misc">Odd ones</button>
+    <button type="button" class="chip" data-kind="online">Online</button>
+  </div>
+  <div class="selectRow">
+    <label>Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
+    <label>Status <select id="status"><option value="all">All trophies</option><option value="earned">Earned</option><option value="remaining">Still to earn</option></select></label>
+    <button id="exportBtn" type="button">Export progress</button>
+    <label class="importLabel">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
+    <button id="resetBtn" type="button">Clear all ticks</button>
+  </div>
+  <p class="onlineNote" id="onlineNote" hidden>There are no online trophies: all 55 are single-player, so this filter is empty on purpose. (PowerPyx trophy guide.)</p>
+  <p class="importNote" id="importNote" hidden></p>
+</section>
+
+<section class="detail" id="detail" hidden aria-label="Trophy guide">
+  <button id="detailClose" type="button" aria-label="Close guide">&times;</button>
+  <div id="detailBody"></div>
+</section>
+
+<main>
+  <p class="listMeta" id="listMeta"></p>
+  <div class="cards" id="cards"></div>
+  <p class="empty" id="emptyState" hidden>No trophies match these filters. Try clearing the search or picking another kind.</p>
+</main>
+
+<footer>
+  <h2>Where the facts come from</h2>
+  <p>Names, descriptions and grades are the official PlayStation list as published on 18 November 2026, cross-checked on Exophase, PSNProfiles and TrueAchievements. The roadmap, the missable flag and the per-trophy steps come from the PowerPyx GTA 6 Trophy Guide and Roadmap, with the GTABase trophy list as a second source. Four trophies have no confirmed method yet as of 19 November 2026, and their guides say so instead of guessing. All guide text is written in our own words for this entry. No Rockstar logo, artwork or game screenshot appears anywhere in this guide. Everything runs offline: your progress is saved in this browser only, and nothing is uploaded.</p>
+  <p class="fineprint">Leonida Ledger is an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Trophy data: Exophase, PSNProfiles, PowerPyx, GTABase, Planet GTA 6.</p>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
