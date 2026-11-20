@@ -9,54 +9,206 @@
 </head>
 <body>
 <header class="masthead">
-  <div>
-    <p class="eyebrow">Grand Theft Auto VI / PlayStation 5 / 55 trophies</p>
+  <div class="mastheadLead">
+    <div class="brandRow">
+      <span class="crest" aria-hidden="true">
+        <svg viewBox="0 0 36 36" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="1.5" y="1.5" width="33" height="33" rx="8" fill="#1f543b" stroke="#b47b08" stroke-width="1.5"/>
+          <path d="M12 10h12v5.5a6 6 0 0 1-12 0V10Z" fill="#f5e6b8" stroke="#f5e6b8" stroke-width="1.2"/>
+          <path d="M12 12H9.2a2.5 2.5 0 0 0 0 5H12M24 12h2.8a2.5 2.5 0 0 1 0 5H24" stroke="#f5e6b8" stroke-width="1.6" stroke-linecap="round"/>
+          <path d="M18 21.5v4.5M13.5 26h9" stroke="#f5e6b8" stroke-width="2" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 Trophies</p>
+    </div>
     <h1>Leonida Ledger</h1>
     <p class="lede">Every trophy, its official name and grade, a guide in our own words with its sources named, and a checklist that saves your progress on your own machine.</p>
   </div>
   <div class="progress" id="progressBox" aria-live="polite">
-    <p class="progressCount"><span id="earnedCount">0</span> <span class="muted">of 55 earned</span></p>
+    <div class="progressTop">
+      <p class="progressCount"><span id="earnedCount">0</span> <span class="muted">of 55 earned</span></p>
+      <span class="progressPct" id="progressPct">0%</span>
+    </div>
     <div class="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
     <p class="progressGrades" id="gradeCounts"></p>
   </div>
 </header>
 
 <section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
-  <h2>Roadmap to the platinum</h2>
+  <div class="roadmapHead">
+    <div>
+      <p class="sectionKicker">Platinum Path</p>
+      <h2>Roadmap to the platinum</h2>
+    </div>
+    <span class="difficultyPill">4 / 10 Difficulty &middot; ~200 Hours</span>
+  </div>
   <p class="roadmapIntro">PowerPyx rates the set 4 out of 10 and about 200 hours. One playthrough is enough: there is no mission replay, no New Game Plus, and free roam stays open after the story. Cheats disable trophies and saving, so keep them off for a trophy run.</p>
+
+  <figure class="mapFigure">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 170" role="img" aria-label="Hand-sketched editorial map of Leonida regions mentioned in the trophy guide">
+  <defs>
+    <linearGradient id="seaWash" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#e9e4d4"/>
+      <stop offset="50%" stop-color="#e3ece8"/>
+      <stop offset="100%" stop-color="#ebe4d2"/>
+    </linearGradient>
+    <pattern id="waveHatch" width="24" height="12" patternUnits="userSpaceOnUse">
+      <path d="M0 6 Q6 3 12 6 T24 6" fill="none" stroke="#8ea39b" stroke-width="0.65" opacity="0.35"/>
+    </pattern>
+  </defs>
+
+  <!-- Parchment ocean base -->
+  <rect width="960" height="170" rx="8" fill="url(#seaWash)"/>
+  <rect width="960" height="170" rx="8" fill="url(#waveHatch)"/>
+
+  <!-- Subtle cartographic graticule -->
+  <g stroke="#b7b09d" stroke-width="0.7" stroke-dasharray="3 4" opacity="0.6">
+    <line x1="0" y1="44" x2="960" y2="44"/>
+    <line x1="0" y1="112" x2="960" y2="112"/>
+    <line x1="220" y1="0" x2="220" y2="170"/>
+    <line x1="480" y1="0" x2="480" y2="170"/>
+    <line x1="740" y1="0" x2="740" y2="170"/>
+  </g>
+
+  <!-- Sketched Leonida coastline & peninsula (schematic editorial illustration) -->
+  <g fill="#f5efe0" stroke="#2d5a3d" stroke-width="1.6" stroke-linejoin="round">
+    <!-- Main Leonida mainland & eastern Vice peninsula -->
+    <path d="M58,18 C135,14 218,22 292,26 C365,30 438,16 520,20 C602,24 676,18 756,30 C802,37 838,54 844,78 C849,98 824,116 786,120 C752,124 720,108 686,112 C642,118 606,136 546,132 C490,128 448,112 394,116 C334,120 278,134 214,124 C160,116 112,102 74,84 C44,70 30,44 58,18 Z"/>
+    <!-- Western Mariana County / Mile Zero island -->
+    <path d="M88,128 C114,122 142,128 154,142 C142,154 108,154 86,144 C78,140 78,131 88,128 Z"/>
+    <!-- Southern Leonida Keys / Key Lento chain -->
+    <path d="M622,144 C644,139 668,141 678,148 C666,154 638,154 622,144 Z"/>
+    <path d="M692,140 C714,135 740,136 752,143 C740,150 710,150 692,140 Z"/>
+    <path d="M766,134 C786,129 808,131 818,138 C806,144 780,144 766,134 Z"/>
+  </g>
+
+  <!-- Inner topographic contour sketch -->
+  <path d="M108,42 C210,38 320,48 430,40 C540,34 655,38 752,52 C790,58 806,74 794,90 C780,106 720,96 668,98 C590,100 520,112 430,102 C330,92 220,104 128,84 C88,74 82,46 108,42 Z"
+        fill="none" stroke="#b9ad92" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Dotted Platinum Roadmap route across regions -->
+  <path d="M120,139 Q210,114 272,82 T462,64 T646,72 T774,84 Q756,118 722,142"
+        fill="none" stroke="#a67200" stroke-width="2" stroke-dasharray="5 4" stroke-linecap="round"/>
+
+  <!-- Subtle palm silhouette clusters -->
+  <g stroke="#2d5a3d" stroke-width="1.2" fill="none" opacity="0.55" stroke-linecap="round">
+    <path d="M798,74 Q800,62 804,56 M804,56 Q796,52 791,56 M804,56 Q812,51 816,56 M804,56 Q803,48 798,46"/>
+    <path d="M236,72 Q238,61 241,56 M241,56 Q234,53 230,57 M241,56 Q248,52 252,57"/>
+  </g>
+
+  <!-- Key Regions from trophies.json -->
+  <g font-family="system-ui, -apple-system, sans-serif" font-size="10.5" font-weight="700" fill="#1a2923">
+    <!-- Mile Zero / Mariana -->
+    <circle cx="120" cy="139" r="4" fill="#1f543b" stroke="#fffdf8" stroke-width="1.5"/>
+    <text x="160" y="144" font-size="9.8" fill="#4f584f">MARIANA COUNTY</text>
+
+    <!-- Port Gellhorn -->
+    <circle cx="272" cy="82" r="4.5" fill="#1f543b" stroke="#fffdf8" stroke-width="1.5"/>
+    <text x="272" y="100" text-anchor="middle">PORT GELLHORN</text>
+
+    <!-- Kelly County / Ambrosia -->
+    <circle cx="462" cy="64" r="4.5" fill="#1f543b" stroke="#fffdf8" stroke-width="1.5"/>
+    <text x="462" y="51" text-anchor="middle">KELLY COUNTY &amp; AMBROSIA</text>
+
+    <!-- Belville / Lummox -->
+    <circle cx="634" cy="66" r="4" fill="#a67200" stroke="#fffdf8" stroke-width="1.5"/>
+    <text x="634" y="53" text-anchor="middle" font-size="9.8" fill="#5e594d">BELVILLE &middot; LUMMOX</text>
+
+    <!-- Vice City & Ocean Beach (Hero Star Pin) -->
+    <circle cx="774" cy="84" r="6" fill="#b42318" stroke="#fffdf8" stroke-width="1.8"/>
+    <text x="774" y="103" text-anchor="middle" fill="#b42318">VICE CITY &amp; OCEAN BEACH</text>
+
+    <!-- Key Lento -->
+    <circle cx="722" cy="142" r="4" fill="#1f543b" stroke="#fffdf8" stroke-width="1.5"/>
+    <text x="684" y="161" text-anchor="middle" font-size="9.8" fill="#4f584f">KEY LENTO</text>
+  </g>
+
+  <!-- Vintage Compass Rose (top-right) -->
+  <g transform="translate(904, 48)" stroke="#1f543b" fill="none">
+    <circle cx="0" cy="0" r="22" stroke-width="1" opacity="0.45"/>
+    <circle cx="0" cy="0" r="16" stroke-width="0.7" stroke-dasharray="2 2" opacity="0.45"/>
+    <polygon points="0,-18 4,-4 0,-7 -4,-4" fill="#1f543b" stroke="none"/>
+    <polygon points="0,18 4,4 0,7 -4,4" fill="#b9ad92" stroke="none"/>
+    <polygon points="18,0 4,4 7,0 4,-4" fill="#b9ad92" stroke="none"/>
+    <polygon points="-18,0 -4,4 -7,0 -4,-4" fill="#b9ad92" stroke="none"/>
+    <text x="0" y="-25" text-anchor="middle" font-family="Georgia, serif" font-size="9" font-weight="700" fill="#1f543b" stroke="none">N</text>
+  </g>
+
+  <!-- Cartographic Map Legend Tag (top-left) -->
+  <g transform="translate(14, 14)">
+    <rect width="176" height="22" rx="4" fill="#fffdf8" fill-opacity="0.88" stroke="#d9cfb8" stroke-width="1"/>
+    <text x="10" y="14.5" font-family="Georgia, serif" font-size="10.5" font-weight="700" fill="#1a2923">LEONIDA FIELD SKETCH</text>
+  </g>
+</svg>
+    <figcaption>Schematic field sketch of key Leonida regions named in the trophy guides (not to scale).</figcaption>
+  </figure>
+
   <ol class="steps">
     <li>
-      <h3>Step 1: Play the story <span class="stepTime">60 to 80 hours</span></h3>
-      <p>Finish the 5 chapters and take optional missions as they appear. Scan vehicles and study animals on the way: the 100 percent checklist counts progress made during the story. Do the Chapter 1 meditation at Jason’s house when Lucia offers it (see Positive Mental Attitude).</p>
+      <div class="stepHead">
+        <span class="stepNum">01</span>
+        <span class="stepTime">60 to 80 hours</span>
+      </div>
+      <h3>Step 1: Play the story</h3>
+      <p>Finish the 5 chapters and take optional missions as they appear. Scan vehicles and study animals on the way: the 100 percent checklist counts progress made during the story. Do the Chapter 1 meditation at Jason&rsquo;s house when Lucia offers it (see Positive Mental Attitude).</p>
     </li>
     <li>
-      <h3>Step 2: The 100 percent checklist <span class="stepTime">about 100 hours</span></h3>
+      <div class="stepHead">
+        <span class="stepNum">02</span>
+        <span class="stepTime">about 100 hours</span>
+      </div>
+      <h3>Step 2: The 100 percent checklist</h3>
       <p>After the story, the checklist opens under Progress, Stats, 100% Completion. It is lenient, closer to 60 percent true completion: 200 of 277 vehicles, 100 of 255 animals, 50 of 66 weapons, and any 70 of 80 challenges. Nothing on it is missable.</p>
     </li>
     <li>
-      <h3>Step 3: Strangers and cleanup <span class="stepTime">about 10 hours</span></h3>
+      <div class="stepHead">
+        <span class="stepNum">03</span>
+        <span class="stepTime">about 10 hours</span>
+      </div>
+      <h3>Step 3: Strangers and cleanup</h3>
       <p>Finish the 8 Strangers and Freaks strands that count, the character questlines for Andy, Kenton, Billy, Randy, Tyrone and Bret, then sweep up whatever is left. Most trophies pop on the way through Steps 1 and 2.</p>
     </li>
   </ol>
   <ul class="facts">
-    <li><strong>1</strong> trophy possibly missable</li>
-    <li><strong>0</strong> online trophies</li>
-    <li><strong>28</strong> hidden until earned</li>
-    <li><strong>1</strong> playthrough</li>
-    <li><strong>200</strong> hours, about</li>
+    <li class="factMissable"><strong>1</strong><span>trophy possibly missable</span></li>
+    <li><strong>0</strong><span>online trophies</span></li>
+    <li><strong>28</strong><span>hidden until earned</span></li>
+    <li><strong>1</strong><span>playthrough</span></li>
+    <li><strong>~200</strong><span>hours, about</span></li>
   </ul>
-  <p class="missableNote" id="missableNote"><strong>Watch one trophy:</strong> Positive Mental Attitude is the only one PowerPyx and GTABase flag as possibly missable. Every other trophy stays earnable in free roam after the story.</p>
+  <p class="missableNote" id="missableNote">
+    <span class="warnIcon" aria-hidden="true">
+      <svg viewBox="0 0 20 20" width="14" height="14" fill="none"><path d="M10 3L18 17H2L10 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 8v4M10 14.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </span>
+    <span><strong>Watch one trophy:</strong> Positive Mental Attitude is the only one PowerPyx and GTABase flag as possibly missable. Every other trophy stays earnable in free roam after the story.</span>
+  </p>
 </section>
+
+<div class="ornamentDivider" aria-hidden="true">
+  <svg viewBox="0 0 420 18" width="420" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <line x1="0" y1="9" x2="176" y2="9" stroke="#c8bda3" stroke-width="1"/>
+    <line x1="244" y1="9" x2="420" y2="9" stroke="#c8bda3" stroke-width="1"/>
+    <polygon points="210,2 217,9 210,16 203,9" fill="#1f543b"/>
+    <circle cx="191" cy="9" r="2.2" fill="#b47b08"/>
+    <circle cx="229" cy="9" r="2.2" fill="#b47b08"/>
+  </svg>
+</div>
 
 <section class="toolbar" aria-label="Find and filter trophies">
   <div class="searchRow">
-    <label class="searchLabel">Search <input id="search" type="search" placeholder="Trophy name, mission, or keyword" autocomplete="off"></label>
-    <label class="spoilerLabel"><input id="spoiler" type="checkbox" checked> Hide story spoilers</label>
+    <label class="searchLabel">
+      <span class="searchTag">Search</span>
+      <span class="searchWrap">
+        <svg class="searchIcon" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <input id="search" type="search" placeholder="Trophy name, mission, or keyword" autocomplete="off">
+      </span>
+    </label>
+    <label class="spoilerLabel"><input id="spoiler" type="checkbox" checked> <span>Hide story spoilers</span></label>
   </div>
   <div class="chipRow" id="kindChips" role="group" aria-label="Filter by kind">
     <button type="button" class="chip active" data-kind="all">All 55</button>
     <button type="button" class="chip" data-kind="story">Story</button>
-    <button type="button" class="chip" data-kind="missable">Missable</button>
+    <button type="button" class="chip chipMissable" data-kind="missable">Missable</button>
     <button type="button" class="chip" data-kind="collectible">Collectibles</button>
     <button type="button" class="chip" data-kind="activity">Activities</button>
     <button type="button" class="chip" data-kind="crime">Crime</button>
@@ -67,9 +219,11 @@
   <div class="selectRow">
     <label>Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
     <label>Status <select id="status"><option value="all">All trophies</option><option value="earned">Earned</option><option value="remaining">Still to earn</option></select></label>
-    <button id="exportBtn" type="button">Export progress</button>
-    <label class="importLabel">Import progress <input id="importFile" type="file" accept="application/json,.json"></label>
-    <button id="resetBtn" type="button">Clear all ticks</button>
+    <div class="actionBtns">
+      <button id="exportBtn" type="button">Export progress</button>
+      <label class="importLabel"><span>Import progress</span><input id="importFile" type="file" accept="application/json,.json"></label>
+      <button id="resetBtn" type="button">Clear all ticks</button>
+    </div>
   </div>
   <p class="onlineNote" id="onlineNote" hidden>There are no online trophies: all 55 are single-player, so this filter is empty on purpose. (PowerPyx trophy guide.)</p>
   <p class="importNote" id="importNote" hidden></p>
@@ -87,6 +241,14 @@
 </main>
 
 <footer>
+  <div class="ornamentDivider footerOrnament" aria-hidden="true">
+    <svg viewBox="0 0 360 16" width="360" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="0" y1="8" x2="152" y2="8" stroke="#c8bda3" stroke-width="1"/>
+      <line x1="208" y1="8" x2="360" y2="8" stroke="#c8bda3" stroke-width="1"/>
+      <circle cx="180" cy="8" r="4" stroke="#1f543b" stroke-width="1.3"/>
+      <circle cx="180" cy="8" r="1.5" fill="#b47b08"/>
+    </svg>
+  </div>
   <h2>Where the facts come from</h2>
   <p>Names, descriptions and grades are the official PlayStation list as published on 18 November 2026, cross-checked on Exophase, PSNProfiles and TrueAchievements. The roadmap, the missable flag and the per-trophy steps come from the PowerPyx GTA 6 Trophy Guide and Roadmap, with the GTABase trophy list as a second source. Four trophies have no confirmed method yet as of 19 November 2026, and their guides say so instead of guessing. All guide text is written in our own words for this entry. No Rockstar logo, artwork or game screenshot appears anywhere in this guide. Everything runs offline: your progress is saved in this browser only, and nothing is uploaded.</p>
   <p class="fineprint">Leonida Ledger is an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Trophy data: Exophase, PSNProfiles, PowerPyx, GTABase, Planet GTA 6.</p>

@@ -20,6 +20,7 @@ const importNoteEl = document.getElementById('importNote');
 const detailEl = document.getElementById('detail');
 const detailBodyEl = document.getElementById('detailBody');
 const earnedCountEl = document.getElementById('earnedCount');
+const progressPctEl = document.getElementById('progressPct');
 const progressFillEl = document.getElementById('progressFill');
 const progressBarEl = document.getElementById('progressBar');
 const gradeCountsEl = document.getElementById('gradeCounts');
@@ -81,6 +82,45 @@ function stageLabel(stage) {
   return 'Roadmap step 3: strangers and cleanup';
 }
 
+/** Distinct original inline SVG trophy icon for each grade (platinum, gold, silver, bronze). */
+function gradeIconSvg(grade) {
+  const ns = 'http://www.w3.org/2000/svg';
+  const svg = document.createElementNS(ns, 'svg');
+  svg.setAttribute('viewBox', '0 0 16 16');
+  svg.setAttribute('fill', 'currentColor');
+  svg.setAttribute('aria-hidden', 'true');
+  const p = document.createElementNS(ns, 'path');
+
+  if (grade === 'platinum') {
+    // Faceted crown-chalice with top diamond sparkle
+    p.setAttribute(
+      'd',
+      'M8 0.8L9.3 3h2.9l-.9 3.6a3.4 3.4 0 0 1-2.3 3V12h2.2a.8.8 0 0 1 0 1.6H4.8a.8.8 0 0 1 0-1.6H7V9.6a3.4 3.4 0 0 1-2.3-3L3.8 3h2.9L8 0.8ZM2 4.2h1.4l.5 2.4A2 2 0 0 1 2 4.2Zm12 0a2 2 0 0 1-1.9 2.4l.5-2.4H14Z',
+    );
+  } else if (grade === 'gold') {
+    // Winged grand laurel cup
+    p.setAttribute(
+      'd',
+      'M4 2h8v2h2a1 1 0 0 1 1 1v1.2A3.3 3.3 0 0 1 11.7 9.5h-.2A3.8 3.8 0 0 1 9 11.3V13h2.3a.8.8 0 0 1 0 1.6H4.7a.8.8 0 0 1 0-1.6H7v-1.7a3.8 3.8 0 0 1-2.5-1.8h-.2A3.3 3.3 0 0 1 1 6.2V5a1 1 0 0 1 1-1h2V2Zm0 3.3H2.4v.9c0 1 .7 1.8 1.6 2V5.3Zm8 0v2.9c.9-.2 1.6-1 1.6-2v-.9H12Z',
+    );
+  } else if (grade === 'silver') {
+    // Classic tall fluted chalice
+    p.setAttribute(
+      'd',
+      'M4.2 2.2h7.6v4.6a3.8 3.8 0 0 1-2.8 3.65V12.8h2a.8.8 0 0 1 0 1.6H5a.8.8 0 0 1 0-1.6h2v-2.35A3.8 3.8 0 0 1 4.2 6.8V2.2Zm-1.8 1.4h1.1v3.2A2.2 2.2 0 0 1 2.4 3.6Zm11.2 0a2.2 2.2 0 0 1-1.1 3.2V3.6h1.1Z',
+    );
+  } else {
+    // Sturdy bronze goblet / medallion cup
+    p.setAttribute(
+      'd',
+      'M4.5 2.8h7v4a3.5 3.5 0 0 1-2.5 3.35V12.8h1.8a.8.8 0 0 1 0 1.6H5.2a.8.8 0 0 1 0-1.6H7v-2.65A3.5 3.5 0 0 1 4.5 6.8v-4Z',
+    );
+  }
+
+  svg.append(p);
+  return svg;
+}
+
 function matchesFilters(trophy) {
   if (kindFilter === 'online') return false;
   if (kindFilter === 'missable' && !trophy.missable) return false;
@@ -98,13 +138,23 @@ function matchesFilters(trophy) {
 
 function renderProgress() {
   earnedCountEl.textContent = String(earned.size);
+  const pct = Math.round((earned.size / TOTAL) * 100);
+  if (progressPctEl) progressPctEl.textContent = `${pct}%`;
   progressFillEl.style.transform = `scaleX(${earned.size / TOTAL})`;
   progressBarEl.setAttribute('aria-valuenow', String(earned.size));
+
   const byGrade = { platinum: [0, 1], gold: [0, 2], silver: [0, 6], bronze: [0, 46] };
   for (const trophy of trophies) {
     if (earned.has(trophy.id)) byGrade[trophy.grade][0] += 1;
   }
-  gradeCountsEl.textContent = `Platinum ${byGrade.platinum[0]}/1 · Gold ${byGrade.gold[0]}/2 · Silver ${byGrade.silver[0]}/6 · Bronze ${byGrade.bronze[0]}/46`;
+
+  gradeCountsEl.replaceChildren();
+  for (const [key, [done, total]] of Object.entries(byGrade)) {
+    const item = document.createElement('span');
+    item.className = `gradeStat ${key}`;
+    item.append(gradeIconSvg(key), document.createTextNode(`${cap(key)} ${done}/${total}`));
+    gradeCountsEl.append(item);
+  }
 }
 
 function renderList() {
@@ -113,16 +163,20 @@ function renderList() {
   for (const trophy of shown) {
     const masked = isMasked(trophy);
     const card = document.createElement('article');
-    card.className = 'card' + (earned.has(trophy.id) ? ' earned' : '');
+    card.className =
+      `card grade-${trophy.grade}` +
+      (trophy.missable ? ' is-missable' : '') +
+      (earned.has(trophy.id) ? ' earned' : '');
     card.dataset.trophyId = String(trophy.id);
 
     const top = document.createElement('div');
     top.className = 'cardTop';
     const grade = document.createElement('span');
     grade.className = `grade ${trophy.grade}`;
-    grade.textContent = cap(trophy.grade);
+    grade.append(gradeIconSvg(trophy.grade), document.createTextNode(cap(trophy.grade)));
+
     const kind = document.createElement('span');
-    kind.className = 'cardKind';
+    kind.className = 'cardKind' + (trophy.missable ? ' missableText' : '');
     kind.textContent = (trophy.missable ? 'Missable · ' : '') + kindLabel(trophy.kind);
     top.append(grade, kind);
 
@@ -158,7 +212,7 @@ function renderList() {
     const link = document.createElement('button');
     link.type = 'button';
     link.className = 'guideLink';
-    link.textContent = masked ? 'Why it is hidden' : 'Read the guide';
+    link.textContent = masked ? 'Why it is hidden' : 'Read the guide →';
     link.addEventListener('click', () => {
       selectedId = trophy.id;
       renderDetail();
@@ -183,10 +237,14 @@ function renderDetail() {
     return;
   }
   detailEl.hidden = false;
+  detailEl.className = `detail grade-${trophy.grade}`;
   detailBodyEl.replaceChildren();
 
   const title = document.createElement('h2');
-  title.textContent = isMasked(trophy) ? 'Hidden story trophy' : trophy.name;
+  const badge = document.createElement('span');
+  badge.className = `grade ${trophy.grade}`;
+  badge.append(gradeIconSvg(trophy.grade), document.createTextNode(cap(trophy.grade)));
+  title.append(badge, document.createTextNode(isMasked(trophy) ? 'Hidden story trophy' : trophy.name));
 
   const official = document.createElement('p');
   official.className = 'official';
@@ -196,16 +254,13 @@ function renderDetail() {
 
   const flags = document.createElement('div');
   flags.className = 'flags';
-  const gradeFlag = document.createElement('span');
-  gradeFlag.className = 'flag';
-  gradeFlag.textContent = cap(trophy.grade);
   const kindFlag = document.createElement('span');
   kindFlag.className = 'flag';
   kindFlag.textContent = kindLabel(trophy.kind);
   const stageFlag = document.createElement('span');
   stageFlag.className = 'flag';
   stageFlag.textContent = stageLabel(trophy.stage);
-  flags.append(gradeFlag, kindFlag, stageFlag);
+  flags.append(kindFlag, stageFlag);
   if (trophy.missable) {
     const missFlag = document.createElement('span');
     missFlag.className = 'flag missable';
