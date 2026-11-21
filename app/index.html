@@ -3,163 +3,145 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Leonida Ledger: GTA VI Trophy Guide and Tracker</title>
-<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies on PlayStation 5: cited guides, a roadmap to the platinum, missable flags, and saved progress.">
+<title>Leonida Ledger — GTA VI Trophy Guide</title>
+<meta name="description" content="An offline guide and tracker for all 55 Grand Theft Auto VI trophies: official names and grades, guides in our own words with sources, and a checklist saved in your browser.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="masthead">
-  <div class="mastheadLead">
-    <div class="brandRow">
-      <span class="crest" aria-hidden="true">
-        <svg viewBox="0 0 36 36" width="36" height="36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="1.5" y="1.5" width="33" height="33" rx="8" fill="#1f543b" stroke="#b47b08" stroke-width="1.5"/>
-          <path d="M12 10h12v5.5a6 6 0 0 1-12 0V10Z" fill="#f5e6b8" stroke="#f5e6b8" stroke-width="1.2"/>
-          <path d="M12 12H9.2a2.5 2.5 0 0 0 0 5H12M24 12h2.8a2.5 2.5 0 0 1 0 5H24" stroke="#f5e6b8" stroke-width="1.6" stroke-linecap="round"/>
-          <path d="M18 21.5v4.5M13.5 26h9" stroke="#f5e6b8" stroke-width="2" stroke-linecap="round"/>
-        </svg>
-      </span>
-      <p class="eyebrow">Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 Trophies</p>
+<div class="topbar"></div>
+<div class="page">
+
+  <header class="hero">
+    <div class="hero-main">
+      <p class="hero-eyebrow">
+        <span class="hero-icon" style="color:#f5b942" aria-hidden="true">
+          <svg viewBox="0 0 40 40">
+            <path d="M11 7h18v6a9 9 0 0 1-18 0V7z" fill="currentColor"/>
+            <path d="M11 9H7a4 4 0 0 0 4.2 5.4M29 9h4a4 4 0 0 1-4.2 5.4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M20 22v5M15 31h10M17 27h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <span>Grand Theft Auto VI &middot; PlayStation 5 &middot; 55 trophies</span>
+      </p>
+      <h1>Leonida Ledger</h1>
+      <p class="hero-sub">Every trophy, its official name and grade, a guide in our own words with its sources named, and a checklist that saves your progress on your own machine.</p>
     </div>
-    <h1>Leonida Ledger</h1>
-    <p class="lede">Every trophy, its official name and grade, a guide in our own words with its sources named, and a checklist that saves your progress on your own machine.</p>
-  </div>
-  <div class="progress" id="progressBox" aria-live="polite">
-    <div class="progressTop">
-      <p class="progressCount"><span id="earnedCount">0</span> <span class="muted">of 55 earned</span></p>
-      <span class="progressPct" id="progressPct">0%</span>
+    <aside class="progress" id="progress" aria-label="Your progress">
+      <div class="progress-top">
+        <span class="progress-count" id="progressText">0 of 55 earned</span>
+        <span class="progress-pct" id="progressPct">0%</span>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      <div class="grade-tiles">
+        <div class="tile" style="color:#dfe3f0">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M11 7h18v6a9 9 0 0 1-18 0V7z" fill="currentColor"/>
+            <path d="M11 9H7a4 4 0 0 0 4.2 5.4M29 9h4a4 4 0 0 1-4.2 5.4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M20 22v5M15 31h10M17 27h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div class="tile-label" id="tilePlatinum">Platinum 0/1</div>
+        </div>
+        <div class="tile" style="color:#dfe3f0">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M11 7h18v6a9 9 0 0 1-18 0V7z" fill="currentColor"/>
+            <path d="M11 9H7a4 4 0 0 0 4.2 5.4M29 9h4a4 4 0 0 1-4.2 5.4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M20 22v5M15 31h10M17 27h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div class="tile-label" id="tileGold">Gold 0/2</div>
+        </div>
+        <div class="tile" style="color:#dfe3f0">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M11 7h18v6a9 9 0 0 1-18 0V7z" fill="currentColor"/>
+            <path d="M11 9H7a4 4 0 0 0 4.2 5.4M29 9h4a4 4 0 0 1-4.2 5.4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M20 22v5M15 31h10M17 27h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div class="tile-label" id="tileSilver">Silver 0/6</div>
+        </div>
+        <div class="tile" style="color:#dfe3f0">
+          <svg viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M11 7h18v6a9 9 0 0 1-18 0V7z" fill="currentColor"/>
+            <path d="M11 9H7a4 4 0 0 0 4.2 5.4M29 9h4a4 4 0 0 1-4.2 5.4" fill="none" stroke="currentColor" stroke-width="2.2"/>
+            <path d="M20 22v5M15 31h10M17 27h6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+          <div class="tile-label" id="tileBronze">Bronze 0/46</div>
+        </div>
+      </div>
+    </aside>
+  </header>
+
+  <section id="roadmap">
+    <p class="eyebrow">Platinum Path</p>
+    <div class="section-head">
+      <h2>Roadmap to the Platinum</h2>
+      <span class="pill">4 / 10 difficulty &middot; ~200 hours</span>
     </div>
-    <div class="progressBar" role="progressbar" aria-valuemin="0" aria-valuemax="55" aria-valuenow="0" id="progressBar"><span id="progressFill"></span></div>
-    <p class="progressGrades" id="gradeCounts"></p>
-  </div>
-</header>
-
-<section class="roadmap" id="roadmap" aria-label="Roadmap to the platinum">
-  <div class="roadmapHead">
-    <div>
-      <p class="sectionKicker">Platinum Path</p>
-      <h2>Roadmap to the platinum</h2>
+    <p class="roadmap-intro">PowerPyx rates the set 4 out of 10 and about 200 hours. One playthrough is enough: there is no mission replay and no New Game Plus, and free roam stays open after the story. Cheats disable trophies and saving, so keep them off for a trophy run.</p>
+    <div class="stat-strip">
+      <span class="stat"><b>4/10</b> difficulty</span>
+      <span class="stat"><b>~200 hours</b> to platinum</span>
+      <span class="stat"><b>1</b> missable trophy: <span class="miss">Positive Mental Attitude</span></span>
+      <span class="stat"><b>0</b> online trophies</span>
+      <span class="stat"><b>1</b> playthrough</span>
     </div>
-    <span class="difficultyPill">4 / 10 Difficulty &middot; ~200 Hours</span>
-  </div>
-  <p class="roadmapIntro">PowerPyx rates the set 4 out of 10 and about 200 hours. One playthrough is enough: there is no mission replay, no New Game Plus, and free roam stays open after the story. Cheats disable trophies and saving, so keep them off for a trophy run.</p>
+    <figure class="map">
+      <img src="assets/leonida-map.svg" alt="Stylised neon map of Leonida: Mount Kalaga in the north, Ambrosia in the east, Port Gellhorn on the west coast, Vice City and Ocean Beach in the south east, Grassrivers in the south west, and the Leonida Keys trailing south.">
+      <figcaption>Schematic neon map of key Leonida regions named in the trophy guides (not to scale).</figcaption>
+    </figure>
+    <div class="steps">
+      <article class="step step-1">
+        <div class="step-head"><span class="step-num">01</span><span class="step-time">60 to 80 hours</span></div>
+        <h3>Step 1: Play the story</h3>
+        <p>Finish the five chapters and take the optional missions as they appear. Scan vehicles and study animals on the way: the 100 percent checklist counts progress made during the story. Do the Chapter 1 meditation at Jason&rsquo;s house when Lucia offers it, it is the one trophy that can be missed.</p>
+      </article>
+      <article class="step step-2">
+        <div class="step-head"><span class="step-num">02</span><span class="step-time">about 100 hours</span></div>
+        <h3>Step 2: The 100 percent checklist</h3>
+        <p>After the story, the checklist opens under Progress, Stats, 100% Completion. It is lenient, closer to 60 percent true completion: 200 of 277 vehicles scanned, 100 of 255 animals studied, 50 of 66 weapons, and any 70 of 80 challenges, plus 100 optional missions. Nothing on it is missable and everything stays open in free roam.</p>
+      </article>
+      <article class="step step-3">
+        <div class="step-head"><span class="step-num">03</span><span class="step-time">about 10 hours</span></div>
+        <h3>Step 3: Strangers and cleanup</h3>
+        <p>Finish the 8 Strangers and Freaks strands that count, the character questlines for Andy, Kenton, Billy, Randy, Tyrone and Bret, then sweep up whatever is left. Most trophies pop on the way through steps 1 and 2.</p>
+      </article>
+    </div>
+  </section>
 
-  <figure class="mapFigure">
-    <img src="assets/leonida-map.svg" alt="Stylised neon map of the state of Leonida with six regions">
-    <figcaption>Schematic neon map of key Leonida regions named in the trophy guides (not to scale).</figcaption>
-  </figure>
+  <section id="detail" hidden aria-live="polite"></section>
 
-  <ol class="steps">
-    <li>
-      <div class="stepHead">
-        <span class="stepNum">01</span>
-        <span class="stepTime">60 to 80 hours</span>
+  <section id="guide">
+    <p class="eyebrow">The Checklist</p>
+    <h2>All 55 trophies</h2>
+    <div class="filters">
+      <input class="search" id="search" type="search" placeholder="Search trophies by name&hellip;" aria-label="Search trophies">
+      <div class="filter-group" id="gradeFilters" role="group" aria-label="Filter by grade">
+        <button class="fbtn active" data-grade="all" type="button">All grades</button>
+        <button class="fbtn" data-grade="platinum" type="button">Platinum</button>
+        <button class="fbtn" data-grade="gold" type="button">Gold</button>
+        <button class="fbtn" data-grade="silver" type="button">Silver</button>
+        <button class="fbtn" data-grade="bronze" type="button">Bronze</button>
       </div>
-      <h3>Step 1: Play the story</h3>
-      <p>Finish the 5 chapters and take optional missions as they appear. Scan vehicles and study animals on the way: the 100 percent checklist counts progress made during the story. Do the Chapter 1 meditation at Jason&rsquo;s house when Lucia offers it (see Positive Mental Attitude).</p>
-    </li>
-    <li>
-      <div class="stepHead">
-        <span class="stepNum">02</span>
-        <span class="stepTime">about 100 hours</span>
+      <div class="filter-group" id="statusFilters" role="group" aria-label="Filter by earned status">
+        <button class="fbtn active" data-status="all" type="button">All</button>
+        <button class="fbtn" data-status="earned" type="button">Earned</button>
+        <button class="fbtn" data-status="remaining" type="button">Remaining</button>
       </div>
-      <h3>Step 2: The 100 percent checklist</h3>
-      <p>After the story, the checklist opens under Progress, Stats, 100% Completion. It is lenient, closer to 60 percent true completion: 200 of 277 vehicles, 100 of 255 animals, 50 of 66 weapons, and any 70 of 80 challenges. Nothing on it is missable.</p>
-    </li>
-    <li>
-      <div class="stepHead">
-        <span class="stepNum">03</span>
-        <span class="stepTime">about 10 hours</span>
-      </div>
-      <h3>Step 3: Strangers and cleanup</h3>
-      <p>Finish the 8 Strangers and Freaks strands that count, the character questlines for Andy, Kenton, Billy, Randy, Tyrone and Bret, then sweep up whatever is left. Most trophies pop on the way through Steps 1 and 2.</p>
-    </li>
-  </ol>
-  <ul class="facts">
-    <li class="factMissable"><strong>1</strong><span>trophy possibly missable</span></li>
-    <li><strong>0</strong><span>online trophies</span></li>
-    <li><strong>28</strong><span>hidden until earned</span></li>
-    <li><strong>1</strong><span>playthrough</span></li>
-    <li><strong>~200</strong><span>hours, about</span></li>
-  </ul>
-  <p class="missableNote" id="missableNote">
-    <span class="warnIcon" aria-hidden="true">
-      <svg viewBox="0 0 20 20" width="14" height="14" fill="none"><path d="M10 3L18 17H2L10 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M10 8v4M10 14.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </span>
-    <span><strong>Watch one trophy:</strong> Positive Mental Attitude is the only one PowerPyx and GTABase flag as possibly missable. Every other trophy stays earnable in free roam after the story.</span>
-  </p>
-</section>
+      <label class="spoiler-toggle"><input type="checkbox" id="spoilerToggle"> Show spoilers</label>
+      <button class="io-btn" id="exportBtn" type="button">Export progress</button>
+      <button class="io-btn" id="importBtn" type="button">Import progress</button>
+      <input type="file" id="importFile" accept="application/json,.json" hidden>
+      <p class="io-status" id="ioStatus" role="status"></p>
+    </div>
+    <p id="showing">Loading trophies&hellip;</p>
+    <div id="cards"></div>
+  </section>
 
-<div class="ornamentDivider" aria-hidden="true">
-  <svg viewBox="0 0 420 18" width="420" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <line x1="0" y1="9" x2="176" y2="9" stroke="#c8bda3" stroke-width="1"/>
-    <line x1="244" y1="9" x2="420" y2="9" stroke="#c8bda3" stroke-width="1"/>
-    <polygon points="210,2 217,9 210,16 203,9" fill="#1f543b"/>
-    <circle cx="191" cy="9" r="2.2" fill="#b47b08"/>
-    <circle cx="229" cy="9" r="2.2" fill="#b47b08"/>
-  </svg>
+  <footer>
+    <p>Sources for the trophy list and guides: PowerPyx GTA 6 Trophy Guide and Roadmap, GTABase GTA 6 trophy list, Exophase Grand Theft Auto VI trophies, PSNProfiles Grand Theft Auto VI trophies, Planet GTA 6 trophy list. Guides are written in our own words and name their sources; where no source has confirmed a method yet, the guide says so plainly.</p>
+    <p>Leonida Ledger works fully offline: open this folder with any static file server and it never reaches for the network. Your checklist is saved only in your own browser.</p>
+    <p>An unofficial fan guide. Grand Theft Auto, GTA and GTA VI are trademarks of Rockstar Games. No Rockstar logo or official artwork is used here.</p>
+  </footer>
+
 </div>
-
-<section class="toolbar" aria-label="Find and filter trophies">
-  <div class="searchRow">
-    <label class="searchLabel">
-      <span class="searchTag">Search</span>
-      <span class="searchWrap">
-        <svg class="searchIcon" viewBox="0 0 20 20" width="16" height="16" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M13.5 13.5L17 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <input id="search" type="search" placeholder="Trophy name, mission, or keyword" autocomplete="off">
-      </span>
-    </label>
-    <label class="spoilerLabel"><input id="spoiler" type="checkbox" checked> <span>Hide story spoilers</span></label>
-  </div>
-  <div class="chipRow" id="kindChips" role="group" aria-label="Filter by kind">
-    <button type="button" class="chip active" data-kind="all">All 55</button>
-    <button type="button" class="chip" data-kind="story">Story</button>
-    <button type="button" class="chip chipMissable" data-kind="missable">Missable</button>
-    <button type="button" class="chip" data-kind="collectible">Collectibles</button>
-    <button type="button" class="chip" data-kind="activity">Activities</button>
-    <button type="button" class="chip" data-kind="crime">Crime</button>
-    <button type="button" class="chip" data-kind="stranger">Strangers</button>
-    <button type="button" class="chip" data-kind="misc">Odd ones</button>
-    <button type="button" class="chip" data-kind="online">Online</button>
-  </div>
-  <div class="selectRow">
-    <label>Grade <select id="grade"><option value="all">All grades</option><option value="platinum">Platinum</option><option value="gold">Gold</option><option value="silver">Silver</option><option value="bronze">Bronze</option></select></label>
-    <label>Status <select id="status"><option value="all">All trophies</option><option value="earned">Earned</option><option value="remaining">Still to earn</option></select></label>
-    <div class="actionBtns">
-      <button id="exportBtn" type="button">Export progress</button>
-      <label class="importLabel"><span>Import progress</span><input id="importFile" type="file" accept="application/json,.json"></label>
-      <button id="resetBtn" type="button">Clear all ticks</button>
-    </div>
-  </div>
-  <p class="onlineNote" id="onlineNote" hidden>There are no online trophies: all 55 are single-player, so this filter is empty on purpose. (PowerPyx trophy guide.)</p>
-  <p class="importNote" id="importNote" hidden></p>
-</section>
-
-<section class="detail" id="detail" hidden aria-label="Trophy guide">
-  <button id="detailClose" type="button" aria-label="Close guide">&times;</button>
-  <div id="detailBody"></div>
-</section>
-
-<main>
-  <p class="listMeta" id="listMeta"></p>
-  <div class="cards" id="cards"></div>
-  <p class="empty" id="emptyState" hidden>No trophies match these filters. Try clearing the search or picking another kind.</p>
-</main>
-
-<footer>
-  <div class="ornamentDivider footerOrnament" aria-hidden="true">
-    <svg viewBox="0 0 360 16" width="360" height="16" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="8" x2="152" y2="8" stroke="#c8bda3" stroke-width="1"/>
-      <line x1="208" y1="8" x2="360" y2="8" stroke="#c8bda3" stroke-width="1"/>
-      <circle cx="180" cy="8" r="4" stroke="#1f543b" stroke-width="1.3"/>
-      <circle cx="180" cy="8" r="1.5" fill="#b47b08"/>
-    </svg>
-  </div>
-  <h2>Where the facts come from</h2>
-  <p>Names, descriptions and grades are the official PlayStation list as published on 18 November 2026, cross-checked on Exophase, PSNProfiles and TrueAchievements. The roadmap, the missable flag and the per-trophy steps come from the PowerPyx GTA 6 Trophy Guide and Roadmap, with the GTABase trophy list as a second source. Four trophies have no confirmed method yet as of 19 November 2026, and their guides say so instead of guessing. All guide text is written in our own words for this entry. No Rockstar logo, artwork or game screenshot appears anywhere in this guide. Everything runs offline: your progress is saved in this browser only, and nothing is uploaded.</p>
-  <p class="fineprint">Leonida Ledger is an unofficial fan guide. Grand Theft Auto and GTA are trademarks of Take-Two Interactive. Trophy data: Exophase, PSNProfiles, PowerPyx, GTABase, Planet GTA 6.</p>
-</footer>
-
-<script type="module" src="app.js"></script>
+<script src="app.js"></script>
 </body>
 </html>
