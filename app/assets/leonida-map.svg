@@ -1,160 +1,112 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 170" role="img" aria-label="Neon map of the state of Leonida with six official regions">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1160 320" role="img" aria-label="Stylised neon map of Leonida showing Mount Kalaga, Ambrosia, Port Gellhorn, Vice City, Ocean Beach, Grassrivers and the Leonida Keys">
+  <title>Leonida map</title>
   <defs>
-    <linearGradient id="nightSea" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0f0f29"/>
-      <stop offset="55%" stop-color="#0b0b1e"/>
-      <stop offset="100%" stop-color="#070714"/>
+    <linearGradient id="sunset" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#7c3aed"/>
+      <stop offset="0.45" stop-color="#db2777"/>
+      <stop offset="0.8" stop-color="#f97316"/>
+      <stop offset="1" stop-color="#fbbf24"/>
     </linearGradient>
-
-    <linearGradient id="sunsetVertical" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#3060CE"/>
-      <stop offset="36%" stop-color="#913BC2"/>
-      <stop offset="70%" stop-color="#FF5395"/>
-      <stop offset="100%" stop-color="#FF944C"/>
+    <linearGradient id="coast" x1="0" y1="0" x2="1" y2="0.55">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="0.45" stop-color="#818cf8"/>
+      <stop offset="0.75" stop-color="#f472b6"/>
+      <stop offset="1" stop-color="#fb7185"/>
     </linearGradient>
-
-    <linearGradient id="landFill" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#1d1c34"/>
-      <stop offset="55%" stop-color="#171726"/>
-      <stop offset="100%" stop-color="#241b36"/>
+    <linearGradient id="frame" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#3b82f6"/>
+      <stop offset="0.35" stop-color="#a855f7"/>
+      <stop offset="0.7" stop-color="#ec4899"/>
+      <stop offset="1" stop-color="#f97316"/>
     </linearGradient>
-
-    <linearGradient id="coastStroke" x1="0.15" y1="0.1" x2="0.85" y2="0.9">
-      <stop offset="0%" stop-color="#2de2e6"/>
-      <stop offset="48%" stop-color="#4de3d1"/>
-      <stop offset="72%" stop-color="#ffb2c6"/>
-      <stop offset="100%" stop-color="#FF5395"/>
-    </linearGradient>
-
-    <filter id="glowCyan" x="-25%" y="-25%" width="150%" height="150%">
-      <feGaussianBlur stdDeviation="2.2" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <filter id="glowPink" x="-30%" y="-30%" width="160%" height="160%">
-      <feGaussianBlur stdDeviation="2.6" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-
-    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
-      <path d="M 32 0 L 0 0 0 32" fill="none" stroke="#2f2e52" stroke-width="0.65" opacity="0.4"/>
+    <pattern id="grid" width="46" height="46" patternUnits="userSpaceOnUse">
+      <path d="M46 0H0V46" fill="none" stroke="#94a3ff" stroke-opacity="0.07" stroke-width="1"/>
     </pattern>
+    <clipPath id="sunClip">
+      <circle cx="72" cy="240" r="50"/>
+    </clipPath>
   </defs>
 
-  <rect width="960" height="170" fill="url(#nightSea)"/>
+  <rect x="0" y="0" width="1160" height="320" fill="#0b0e20"/>
+  <rect x="0" y="0" width="1160" height="320" fill="url(#grid)"/>
 
-  <rect width="960" height="170" fill="url(#grid)"/>
+  <rect x="0" y="0" width="1160" height="3" fill="url(#frame)"/>
+  <rect x="0" y="317" width="1160" height="3" fill="url(#frame)"/>
 
-  <path d="M 10 12 L 26 12 M 10 12 L 10 28" fill="none" stroke="#2de2e6" stroke-width="1.4" opacity="0.7"/>
-  <path d="M 950 12 L 934 12 M 950 12 L 950 28" fill="none" stroke="#FF944C" stroke-width="1.4" opacity="0.7"/>
+  <path d="M18 34V18h16" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
+  <path d="M1126 18h16v16" fill="none" stroke="#f97316" stroke-width="2.5"/>
+  <path d="M18 286v16h16" fill="none" stroke="#22d3ee" stroke-width="2.5"/>
+  <path d="M1126 302h16v-16" fill="none" stroke="#f97316" stroke-width="2.5"/>
 
-  <circle cx="48" cy="118" r="34" fill="url(#sunsetVertical)" opacity="0.8"/>
-  <rect x="12" y="118" width="72" height="3" fill="#0b0b1e"/>
-  <rect x="12" y="126" width="72" height="4" fill="#0b0b1e"/>
-  <rect x="12" y="135" width="72" height="5" fill="#0b0b1e"/>
-
-  <g fill="#07070b">
-    <path d="M 24 166 Q 30 132 42 104 L 46 105 Q 36 134 32 166 Z"/>
-    <path d="M 44 104 Q 26 94 12 102 Q 26 102 42 107 Z"/>
-    <path d="M 44 104 Q 30 84 18 82 Q 32 91 43 105 Z"/>
-    <path d="M 44 104 Q 46 82 58 76 Q 50 90 46 105 Z"/>
-    <path d="M 45 105 Q 64 90 78 96 Q 62 98 46 107 Z"/>
-    <path d="M 45 106 Q 62 106 72 118 Q 58 112 44 108 Z"/>
-
-    <path d="M 62 166 Q 60 144 54 124 L 58 124 Q 65 144 68 166 Z"/>
-    <path d="M 56 124 Q 42 116 32 122 Q 43 122 55 126 Z"/>
-    <path d="M 56 124 Q 50 108 42 106 Q 51 114 56 125 Z"/>
-    <path d="M 56 124 Q 68 112 80 116 Q 68 118 57 126 Z"/>
+  <g>
+    <circle cx="72" cy="240" r="50" fill="url(#sunset)"/>
+    <g clip-path="url(#sunClip)">
+      <rect x="14" y="232" width="116" height="5" fill="#0b0e20"/>
+      <rect x="14" y="246" width="116" height="6" fill="#0b0e20"/>
+      <rect x="14" y="260" width="116" height="7" fill="#0b0e20"/>
+    </g>
+    <g stroke="#05060f" stroke-width="4" stroke-linecap="round" fill="none">
+      <path d="M72 292C70 262 66 246 56 228"/>
+      <path d="M56 228Q30 210 14 216"/>
+      <path d="M56 228Q40 200 22 198"/>
+      <path d="M56 228Q56 198 44 186"/>
+      <path d="M56 228Q72 200 88 196"/>
+      <path d="M56 228Q88 212 102 220"/>
+    </g>
+    <circle cx="52" cy="232" r="3" fill="#05060f"/>
+    <circle cx="60" cy="234" r="3" fill="#05060f"/>
   </g>
 
-  <path d="M 284 44 C 312 24 378 13 458 12 C 538 11 604 18 634 38 C 646 46 636 56 644 68 C 656 80 676 92 678 106 C 679 116 660 120 644 114 C 632 110 622 118 614 126 C 598 136 568 142 532 140 C 498 138 470 128 450 114 C 426 98 394 88 386 76 C 382 68 396 64 388 58 C 378 52 364 66 352 62 C 340 58 344 48 332 52 C 316 58 292 56 284 44 Z"
-        transform="translate(4, 4)" fill="#05050c" opacity="0.88"/>
+  <path d="M296 142 C330 96 440 60 556 56 C668 52 762 76 808 124 C836 152 840 176 820 196 C788 224 716 240 636 242 C556 244 470 234 422 214 C398 204 388 194 396 182 C403 171 384 160 356 152 C334 146 312 144 296 142 Z"
+    fill="#131838" fill-opacity="0.7" stroke="url(#coast)" stroke-width="2.5" stroke-linejoin="round"/>
 
-  <path d="M 284 44 C 312 24 378 13 458 12 C 538 11 604 18 634 38 C 646 46 636 56 644 68 C 656 80 676 92 678 106 C 679 116 660 120 644 114 C 632 110 622 118 614 126 C 598 136 568 142 532 140 C 498 138 470 128 450 114 C 426 98 394 88 386 76 C 382 68 396 64 388 58 C 378 52 364 66 352 62 C 340 58 344 48 332 52 C 316 58 292 56 284 44 Z"
-        fill="url(#landFill)" stroke="url(#coastStroke)" stroke-width="2" filter="url(#glowCyan)"/>
+  <ellipse cx="652" cy="132" rx="54" ry="32" transform="rotate(-14 652 132)" fill="#0b0e20" stroke="#3b82f6" stroke-width="2"/>
 
-  <g fill="none" stroke="#913BC2" stroke-width="1" opacity="0.48">
-    <path d="M 412 36 Q 456 20 502 34 Q 478 44 440 42 Z"/>
-    <path d="M 428 33 Q 456 24 486 33 Q 466 39 444 37 Z"/>
-    <path d="M 444 31 Q 456 27 470 31"/>
+  <g fill="none" stroke="#a78bfa" stroke-width="1.5" opacity="0.8">
+    <path d="M498 108L516 92l14 12 14-14 16 16"/>
+    <path d="M512 118l8-8 10 7"/>
   </g>
 
-  <path d="M 534 44 C 554 34 584 36 598 48 C 610 58 606 72 588 78 C 566 84 542 78 530 66 C 522 58 524 48 534 44 Z"
-        fill="#0b0b1e" stroke="#3060CE" stroke-width="1.9" filter="url(#glowCyan)"/>
-
-  <g stroke="#4de3d1" stroke-width="1" stroke-linecap="round" opacity="0.45">
-    <line x1="484" y1="112" x2="496" y2="112"/>
-    <line x1="508" y1="110" x2="522" y2="110"/>
-    <line x1="536" y1="113" x2="548" y2="113"/>
-    <line x1="494" y1="120" x2="508" y2="120"/>
-    <line x1="522" y1="122" x2="534" y2="122"/>
-    <line x1="552" y1="120" x2="564" y2="120"/>
-    <line x1="506" y1="129" x2="520" y2="129"/>
-    <line x1="538" y1="131" x2="552" y2="131"/>
-    <circle cx="502" cy="116" r="0.9" fill="#4de3d1"/>
-    <circle cx="530" cy="117" r="0.9" fill="#4de3d1"/>
-    <circle cx="560" cy="126" r="0.9" fill="#4de3d1"/>
-    <circle cx="524" cy="134" r="0.9" fill="#4de3d1"/>
+  <g fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5 5" opacity="0.75">
+    <path d="M322 150L570 170 816 188"/>
+    <path d="M570 170L562 212 816 188"/>
   </g>
 
-  <g fill="none" stroke="#FF944C" stroke-width="1.3" stroke-dasharray="3.5 3" opacity="0.72">
-    <path d="M 358 60 Q 424 54 506 68 Q 588 82 666 98"/>
-    <path d="M 506 68 Q 486 48 456 28"/>
-    <path d="M 666 98 Q 608 122 526 122 Q 492 146 456 155"/>
+  <g fill="none" stroke="#f472b6" stroke-width="1.5" opacity="0.85">
+    <ellipse cx="430" cy="272" rx="26" ry="7" transform="rotate(-8 430 272)"/>
+    <ellipse cx="492" cy="278" rx="30" ry="7" transform="rotate(-6 492 278)"/>
+    <ellipse cx="556" cy="276" rx="24" ry="6" transform="rotate(-6 556 276)"/>
+    <ellipse cx="618" cy="268" rx="28" ry="7" transform="rotate(-8 618 268)"/>
+    <ellipse cx="682" cy="258" rx="22" ry="6" transform="rotate(-10 682 258)"/>
   </g>
 
-  <g fill="#05050c" opacity="0.85" transform="translate(2.5, 2.5)">
-    <ellipse cx="586" cy="146" rx="13" ry="3.6" transform="rotate(-14 586 146)"/>
-    <ellipse cx="552" cy="153" rx="16" ry="4" transform="rotate(-8 552 153)"/>
-    <ellipse cx="512" cy="157" rx="18" ry="4.2" transform="rotate(-2 512 157)"/>
-    <ellipse cx="470" cy="157" rx="17" ry="4.2" transform="rotate(4 470 157)"/>
-    <ellipse cx="430" cy="153" rx="15" ry="3.8" transform="rotate(10 430 153)"/>
-    <ellipse cx="394" cy="146" rx="12" ry="3.4" transform="rotate(16 394 146)"/>
-  </g>
-  <g fill="#171726" stroke="#FF5395" stroke-width="1.6" filter="url(#glowPink)">
-    <ellipse cx="586" cy="146" rx="13" ry="3.6" transform="rotate(-14 586 146)"/>
-    <ellipse cx="552" cy="153" rx="16" ry="4" transform="rotate(-8 552 153)"/>
-    <ellipse cx="512" cy="157" rx="18" ry="4.2" transform="rotate(-2 512 157)"/>
-    <ellipse cx="470" cy="157" rx="17" ry="4.2" transform="rotate(4 470 157)"/>
-    <ellipse cx="430" cy="153" rx="15" ry="3.8" transform="rotate(10 430 153)"/>
-    <ellipse cx="394" cy="146" rx="12" ry="3.4" transform="rotate(16 394 146)"/>
+  <g font-family="Segoe UI, Arial, sans-serif" font-size="15" font-weight="700" fill="#ffffff">
+    <circle cx="542" cy="96" r="5" fill="#22d3ee" stroke="#0b0e20" stroke-width="2"/>
+    <text x="556" y="101">Mount Kalaga</text>
+
+    <circle cx="318" cy="148" r="5" fill="#22d3ee" stroke="#0b0e20" stroke-width="2"/>
+    <text x="306" y="153" text-anchor="end">Port Gellhorn</text>
+
+    <circle cx="572" cy="168" r="5" fill="#22d3ee" stroke="#0b0e20" stroke-width="2"/>
+    <text x="560" y="173" text-anchor="end">Ambrosia</text>
+
+    <circle cx="560" cy="212" r="5" fill="#22d3ee" stroke="#0b0e20" stroke-width="2"/>
+    <text x="574" y="217">Grassrivers</text>
+
+    <circle cx="500" cy="274" r="5" fill="#22d3ee" stroke="#0b0e20" stroke-width="2"/>
+    <text x="514" y="279">Leonida Keys</text>
+
+    <circle cx="818" cy="186" r="7" fill="none" stroke="#f472b6" stroke-width="2.5"/>
+    <circle cx="818" cy="186" r="3" fill="#f472b6"/>
+    <text x="832" y="182">Vice City</text>
+    <text x="832" y="200" font-size="11.5" font-weight="600" fill="#f9a8d4">Ocean Beach</text>
   </g>
 
-  <g fill="#2de2e6" stroke="#07070b" stroke-width="1.5" filter="url(#glowCyan)">
-    <circle cx="456" cy="28" r="3.8"/>
-    <circle cx="358" cy="60" r="3.8"/>
-    <circle cx="506" cy="68" r="3.8"/>
-    <circle cx="526" cy="122" r="3.8"/>
-    <circle cx="456" cy="155" r="3.8"/>
-  </g>
-  <g filter="url(#glowPink)">
-    <circle cx="666" cy="98" r="4.6" fill="#FF5395" stroke="#07070b" stroke-width="1.5"/>
-    <circle cx="666" cy="98" r="9" fill="none" stroke="#ffb2c6" stroke-width="1.4" opacity="0.9"/>
-  </g>
-
-  <g font-family="ui-sans-serif, system-ui, -apple-system, sans-serif" font-size="11" font-weight="700" fill="#f4f4fa" stroke="#07070b" stroke-width="1.2" paint-order="stroke fill" stroke-linejoin="round">
-    <text x="466" y="31">Mount Kalaga</text>
-    <text x="348" y="64" text-anchor="end">Port Gellhorn</text>
-    <text x="496" y="72" text-anchor="end">Ambrosia</text>
-    <text x="680" y="101">Vice City</text>
-    <text x="680" y="111" font-size="8.5" fill="#ffb2c6" opacity="0.9">Ocean Beach</text>
-    <text x="536" y="126">Grassrivers</text>
-    <text x="468" y="158">Leonida Keys</text>
-  </g>
-
-  <g transform="translate(888, 52)">
-    <circle r="21" fill="#171726" stroke="#2de2e6" stroke-width="1.4" filter="url(#glowCyan)"/>
-    <circle r="16" fill="none" stroke="#2f2e52" stroke-width="1"/>
-    <line x1="0" y1="-15" x2="0" y2="15" stroke="#4b497d" stroke-width="1.1"/>
-    <line x1="-15" y1="0" x2="15" y2="0" stroke="#4b497d" stroke-width="1.1"/>
-    <polygon points="0,-15 3.8,-3 0,-5.5 -3.8,-3" fill="#FF5395" filter="url(#glowPink)"/>
-    <polygon points="0,15 3,4 0,6 -3,4" fill="#2de2e6"/>
-    <text x="0" y="-25" text-anchor="middle" font-family="ui-monospace, Menlo, monospace" font-size="10" font-weight="700" fill="#f4f4fa" stroke="#07070b" stroke-width="1.2" paint-order="stroke fill">N</text>
+  <g>
+    <circle cx="1068" cy="104" r="30" fill="none" stroke="#22d3ee" stroke-width="1.5"/>
+    <circle cx="1068" cy="104" r="22" fill="none" stroke="#ffffff" stroke-opacity="0.15" stroke-width="1"/>
+    <text x="1068" y="66" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="700" fill="#ffffff">N</text>
+    <polygon points="1068,80 1077,106 1068,100 1059,106" fill="#ec4899"/>
+    <polygon points="1068,128 1077,102 1068,108 1059,102" fill="#22d3ee"/>
   </g>
 </svg>
